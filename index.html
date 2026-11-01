@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habakkuk Nyambati — Technical Support Specialist & AI Systems Integrator</title>
+  <meta name="description" content="Portfolio of Habakkuk Nyambati — Technical Support Specialist, Customer Operations Engineer, and Builder of Planpaste (magicplan.world) based in Kenya.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle glow & tech styling */
+    .glow-border:hover {
+      box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+    }
+    .grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-width: 1px;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-brand-500 selection:text-white antialiased min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+  <!-- Ambient Light Accents -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-brand-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-0 right-0 w-[500px] h-[300px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-400 p-[1px] shadow-sm shadow-brand-500/20">
+          <div class="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center group-hover:bg-transparent transition-colors">
+            <span class="font-display font-bold text-sm tracking-wider text-brand-400 group-hover:text-white transition-colors">HN</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-sm tracking-tight text-white group-hover:text-brand-400 transition-colors">Habakkuk Nyambati</span>
+          <span class="text-[11px] text-slate-400">Technical Support & AI Builder</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
+        <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+        <a href="#featured-project" class="hover:text-brand-400 transition-colors flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+          Planpaste
+        </a>
+        <a href="#experience" class="hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-brand-400 transition-colors">AI & Skills</a>
+        <a href="#certifications" class="hover:text-brand-400 transition-colors">Credentials</a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600/90 text-white hover:bg-brand-500 font-semibold transition-all shadow-sm shadow-brand-600/30">
+          Get in Touch
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden px-5 pb-5 pt-2 border-t border-slate-800 bg-slate-950/95 space-y-3 text-sm">
+      <a href="#about" class="block py-2 text-slate-300 hover:text-brand-400" onclick="closeMobileMenu()">About</a>
+      <a href="#featured-project" class="block py-2 text-slate-300 hover:text-brand-400" onclick="closeMobileMenu()">Featured: Planpaste</a>
+      <a href="#experience" class="block py-2 text-slate-300 hover:text-brand-400" onclick="closeMobileMenu()">Work Experience</a>
+      <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-400" onclick="closeMobileMenu()">AI & Skills</a>
+      <a href="#certifications" class="block py-2 text-slate-300 hover:text-brand-400" onclick="closeMobileMenu()">Certifications</a>
+      <a href="#contact" class="block py-2 text-brand-400 font-semibold" onclick="closeMobileMenu()">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-16 pb-20 md:pt-24 md:pb-28 max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          Available for Technical Support & Operations Roles
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+          Bridging the gap between <span class="bg-gradient-to-r from-brand-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent">complex tech</span> and seamless customer success.
+        </h1>
+
+        <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+          I’m <span class="text-slate-100 font-semibold">Habakkuk Nyambati</span>, a Technical Support Specialist and Computer Science graduate based in Kenya. I combine root-cause IT troubleshooting, SLA compliance, and modern AI toolchains to build reliable systems and support exceptional software products.
+        </p>
+
+        <!-- Call to actions -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#featured-project" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm transition-all shadow-md shadow-brand-600/30">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            Explore Planpaste (AI Project)
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/80 text-slate-200 font-medium text-sm transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            Contact Me
+          </a>
+          <a href="https://github.com/archhub868" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl border border-slate-800 bg-slate-900/40 hover:bg-slate-800 text-slate-300 hover:text-white transition-all" title="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/habakkuknyambati/" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl border border-slate-800 bg-slate-900/40 hover:bg-slate-800 text-slate-300 hover:text-white transition-all" title="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Quick metadata stats -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 max-w-lg">
+          <div>
+            <div class="font-display text-2xl font-bold text-white">4+ Yrs</div>
+            <div class="text-xs text-slate-400">IT & Support Exp.</div>
+          </div>
+          <div>
+            <div class="font-display text-2xl font-bold text-brand-400">99%+</div>
+            <div class="text-xs text-slate-400">SLA Adherence</div>
+          </div>
+          <div>
+            <div class="font-display text-2xl font-bold text-indigo-400">B.S. CS</div>
+            <div class="text-xs text-slate-400">MMUST Graduate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Profile Card -->
+      <div class="lg:col-span-5">
+        <div class="relative mx-auto max-w-sm rounded-2xl border border-slate-800 bg-slate-900/70 p-6 backdrop-blur-xl shadow-2xl">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 p-[2px] shadow-lg shadow-brand-500/20">
+              <div class="w-full h-full rounded-[10px] bg-slate-950 flex items-center justify-center font-display font-extrabold text-2xl text-brand-400">
+                HN
+              </div>
+            </div>
+            <div>
+              <h2 class="font-display font-bold text-lg text-white">Habakkuk Nyambati</h2>
+              <p class="text-xs text-slate-400">Nairobi & Mombasa, Kenya</p>
+              <div class="flex items-center gap-1.5 mt-1.5 text-xs text-brand-400 font-medium">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                Technical Support Specialist
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 space-y-3 text-xs">
+            <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/70 flex items-center justify-between">
+              <span class="text-slate-400">Current Focus:</span>
+              <span class="font-semibold text-slate-200">Influx & AI Integrations</span>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/70 flex items-center justify-between">
+              <span class="text-slate-400">Flagship Build:</span>
+              <a href="https://magicplan.world" target="_blank" class="font-semibold text-brand-400 hover:underline flex items-center gap-1">
+                magicplan.world <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/70 flex items-center justify-between">
+              <span class="text-slate-400">Primary Core:</span>
+              <span class="font-semibold text-slate-200">Incident Escalation & Root Cause</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-slate-800/80 flex items-center justify-between">
+            <div class="text-[11px] text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-500"></i>
+              Kenya (EAT / UTC+3)
+            </div>
+            <a href="mailto:onchirinyambati1998@gmail.com" class="text-xs text-brand-400 hover:text-brand-300 font-medium flex items-center gap-1">
+              Send Email <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Project: Planpaste (magicplan.world) -->
+  <section id="featured-project" class="py-16 border-t border-slate-800/80 bg-slate-900/30 relative">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <div class="badge-pill bg-brand-500/10 border-brand-500/30 text-brand-400 mb-2">
+            <i data-lucide="flame" class="w-3.5 h-3.5"></i> Featured Production Application
+          </div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-white">Planpaste (Magicplan)</h2>
+          <p class="text-sm text-slate-400 mt-1 max-w-xl">
+            An end-to-end AI SaaS web application that parses messy chat transcripts and meeting notes into structured, editable action items with owners and deadlines.
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://magicplan.world" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-white transition-all shadow-md shadow-brand-600/20">
+            Visit Live Site (magicplan.world) <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Highlight Card -->
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 md:p-8 relative overflow-hidden glow-border transition-all">
+        <!-- Accent pattern -->
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-brand-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="badge-pill bg-slate-800 border-slate-700 text-slate-300">TanStack Start (SSR)</span>
+              <span class="badge-pill bg-slate-800 border-slate-700 text-slate-300">OpenAI GPT-4o</span>
+              <span class="badge-pill bg-slate-800 border-slate-700 text-slate-300">Supabase</span>
+              <span class="badge-pill bg-slate-800 border-slate-700 text-slate-300">Resend DNS Auth</span>
+              <span class="badge-pill bg-slate-800 border-slate-700 text-slate-300">Vercel</span>
+              <span class="badge-pill bg-slate-800 border-slate-700 text-slate-300">Tailwind CSS</span>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-white">
+              Full-Stack Architecture & AI Prompt Engineering
+            </h3>
+
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Designed and deployed the complete operational lifecycle of Planpaste. Configured cryptographic domain verification (DKIM/SPF) on custom apex domains via Resend, handled robust server-side edge runtime functions with OpenAI GPT-4o structured JSON outputs, eliminated build performance bottlenecks, and engineered anonymous guest trials with persistent local state transfer.
+            </p>
+
+            <!-- Key Feature Deliverables -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+              <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/80">
+                <div class="font-semibold text-slate-200 flex items-center gap-1.5 mb-1">
+                  <i data-lucide="cpu" class="w-3.5 h-3.5 text-brand-400"></i> GPT-4o AI Extraction Engine
+                </div>
+                <p class="text-slate-400">Extracts complex date-time phrases, responsible parties, and action items with structured JSON schemas.</p>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/80">
+                <div class="font-semibold text-slate-200 flex items-center gap-1.5 mb-1">
+                  <i data-lucide="mail-check" class="w-3.5 h-3.5 text-brand-400"></i> Resend Transactional Email
+                </div>
+                <p class="text-slate-400">Domain-authenticated sending via Namecheap DNS, preventing spam flags and securing server-side API keys.</p>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/80">
+                <div class="font-semibold text-slate-200 flex items-center gap-1.5 mb-1">
+                  <i data-lucide="shield" class="w-3.5 h-3.5 text-brand-400"></i> Zero-Warning CI/CD Pipeline
+                </div>
+                <p class="text-slate-400">Resolved Bun frozen-lockfile dependencies, managed Vite bundle chunk limits, and passed security audits.</p>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800/80">
+                <div class="font-semibold text-slate-200 flex items-center gap-1.5 mb-1">
+                  <i data-lucide="user-check" class="w-3.5 h-3.5 text-brand-400"></i> Guest-to-Auth Conversion
+                </div>
+                <p class="text-slate-400">Built a seamless trial extraction funnel that seamlessly transfers pre-extracted plans into user dashboards.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preview Mockup Card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 shadow-inner space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                  <span class="ml-2 font-mono text-slate-400">magicplan.world</span>
+                </div>
+                <span class="text-emerald-400 font-mono text-[10px]">PRODUCTION LIVE</span>
+              </div>
+
+              <div class="space-y-2.5">
+                <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
+                  <span class="text-brand-400">INPUT:</span> "Sprint sync: Sara to update pricing page before 18th, Tom drafting email by Thurs."
+                </div>
+                
+                <div class="flex items-center justify-center py-1">
+                  <i data-lucide="arrow-down" class="w-4 h-4 text-brand-500"></i>
+                </div>
+
+                <div class="p-3 rounded-lg bg-slate-900 border border-brand-500/40 text-xs font-mono text-slate-200 space-y-1.5">
+                  <div class="text-[11px] text-emerald-400 font-semibold mb-1">EXTRACTED TASKS (GPT-4o):</div>
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span>✓ Update pricing page</span>
+                    <span class="text-brand-400">@Sara • Oct 18</span>
+                  </div>
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span>✓ Draft announcement email</span>
+                    <span class="text-brand-400">@Tom • Thursday</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-2 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Live URL:</span>
+                <a href="https://magicplan.world" target="_blank" class="text-brand-400 hover:text-brand-300 font-medium inline-flex items-center gap-1">
+                  https://magicplan.world <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Timeline -->
+  <section id="experience" class="py-20 max-w-6xl mx-auto px-5">
+    <div class="mb-12">
+      <div class="badge-pill bg-indigo-500/10 border-indigo-500/30 text-indigo-400 mb-2">
+        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Track Record
+      </div>
+      <h2 class="font-display text-3xl font-bold tracking-tight text-white">Professional Experience</h2>
+      <p class="text-sm text-slate-400 mt-1">
+        Demonstrated history in IT troubleshooting, user training, SLA execution, and service engineering.
+      </p>
+    </div>
+
+    <div class="relative border-l border-slate-800 ml-4 md:ml-6 space-y-10">
+
+      <!-- Job 1: Influx -->
+      <div class="relative pl-6 md:pl-8 group">
+        <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-brand-500 ring-4 ring-slate-950"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-400 transition-colors">
+            Technical Support Specialist
+          </h3>
+          <span class="text-xs font-mono text-brand-400 bg-brand-500/10 border border-brand-500/20 px-2.5 py-0.5 rounded-full w-fit">
+            Nov 2025 — Present
+          </span>
+        </div>
+        <div class="text-sm font-semibold text-slate-300 mb-2">Influx</div>
+        <p class="text-xs text-slate-400 leading-relaxed max-w-3xl">
+          Delivering advanced multi-channel technical support and incident management. Diagnosing software issues, driving rapid ticket resolution, and implementing standardized customer support workflows for high customer satisfaction.
+        </p>
+      </div>
+
+      <!-- Job 2: Teleperformance -->
+      <div class="relative pl-6 md:pl-8 group">
+        <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 ring-4 ring-slate-950 transition-colors"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-400 transition-colors">
+            Customer Support Specialist
+          </h3>
+          <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-full w-fit">
+            Nov 2024 — Oct 2025 (1 Year)
+          </span>
+        </div>
+        <div class="text-sm font-semibold text-slate-300 mb-2">Teleperformance — Mombasa County, Kenya</div>
+        <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside max-w-3xl leading-relaxed">
+          <li>Conducted real-time performance monitoring and provided constructive feedback to optimize agent efficiency.</li>
+          <li>Maintained strict adherence to SLA, company policies, and regulatory compliance standards.</li>
+          <li>Handled complex escalations and collaborated with cross-functional teams to resolve high-priority customer concerns.</li>
+          <li>Analyzed customer interaction trends to identify opportunities for support workflow optimization.</li>
+        </ul>
+      </div>
+
+      <!-- Job 3: MARAMOJA transport -->
+      <div class="relative pl-6 md:pl-8 group">
+        <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 ring-4 ring-slate-950 transition-colors"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-400 transition-colors">
+            Customer Service Engineer
+          </h3>
+          <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-full w-fit">
+            Jan 2024 — Jun 2024 (6 Months)
+          </span>
+        </div>
+        <div class="text-sm font-semibold text-slate-300 mb-2">MARAMOJA transport — Nairobi Parklands, Kenya</div>
+        <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside max-w-3xl leading-relaxed">
+          <li>Delivered frontline technical assistance, troubleshooting customer and driver issues with a <span class="text-slate-200 font-medium">20% increase in CSAT</span>.</li>
+          <li>Conducted product training sessions for new and existing clients, driving product utilization up by <span class="text-slate-200 font-medium">30%</span>.</li>
+          <li>Implemented and maintained a knowledge base system that reduced team response times by <span class="text-slate-200 font-medium">15%</span>.</li>
+        </ul>
+      </div>
+
+      <!-- Job 4: Crescent Tech -->
+      <div class="relative pl-6 md:pl-8 group">
+        <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 ring-4 ring-slate-950 transition-colors"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-400 transition-colors">
+            Technical Support Engineer
+          </h3>
+          <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-full w-fit">
+            Jan 2023 — Nov 2023 (11 Months)
+          </span>
+        </div>
+        <div class="text-sm font-semibold text-slate-300 mb-2">Crescent Tech — Nairobi County, Kenya</div>
+        <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside max-w-3xl leading-relaxed">
+          <li>Documented standard operating procedures (SOPs), reducing ticket resolution times by <span class="text-slate-200 font-medium">20%</span>.</li>
+          <li>Managed network infrastructure and proactive monitoring, cutting network downtime by <span class="text-slate-200 font-medium">30%</span>.</li>
+          <li>Assisted in enterprise system upgrades, security migrations, and end-user hardware deployments.</li>
+        </ul>
+      </div>
+
+      <!-- Job 5: Nyamira County Referral Hospital -->
+      <div class="relative pl-6 md:pl-8 group">
+        <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 ring-4 ring-slate-950 transition-colors"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+          <h3 class="font-display text-lg font-bold text-white group-hover:text-brand-400 transition-colors">
+            Information Technology Intern
+          </h3>
+          <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-full w-fit">
+            May 2021 — Aug 2021 (4 Months)
+          </span>
+        </div>
+        <div class="text-sm font-semibold text-slate-300 mb-2">Nyamira County Referral Hospital — Kenya</div>
+        <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside max-w-3xl leading-relaxed">
+          <li>Collaborated with 5 developers to design and implement 12 software features, meeting strict deployment deadlines.</li>
+          <li>Identified and optimized performance bottlenecks across 3 core hospital management applications, improving response times by <span class="text-slate-200 font-medium">15%</span>.</li>
+          <li>Installed, configured, and hardened 20+ desktop systems and servers.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AI Proficiency & Technical Skills -->
+  <section id="skills" class="py-16 border-t border-slate-800/80 bg-slate-900/20">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-12">
+        <div class="badge-pill bg-violet-500/10 border-violet-500/30 text-violet-400 mb-2">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Skills & Stack
+        </div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-white">AI Tools & Technical Capabilities</h2>
+        <p class="text-sm text-slate-400 mt-1">
+          A blend of modern generative AI workflows and foundational systems engineering.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- AI Tooling -->
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-6 space-y-4 glow-border transition-all">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+            <i data-lucide="bot" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-base text-white">Generative AI Tooling</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Hands-on daily proficiency in prompt engineering, automated workflows, and AI-assisted development.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">ChatGPT (GPT-4o)</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Claude 3.5 Sonnet</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Google Gemini</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Perplexity AI</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Notion AI</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Canva AI</span>
+          </div>
+        </div>
+
+        <!-- Technical Support & IT Ops -->
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-6 space-y-4 glow-border transition-all">
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+            <i data-lucide="headphones" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-base text-white">Support & Customer Engineering</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Diagnosing software defects, managing high-stakes escalation paths, and authoring technical documentation.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">SLA Enforcement</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Incident Escalation</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Root Cause Analysis</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Knowledge Base / SOPs</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Customer Training</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">CSAT Optimization</span>
+          </div>
+        </div>
+
+        <!-- Infrastructure & Software -->
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-6 space-y-4 glow-border transition-all">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i data-lucide="database" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-base text-white">Database & Infrastructure</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Computer science fundamentals with practical experience in network hardware, SQL queries, and cloud deployment.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">SQL Queries & Filtering</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Computer Networking</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">DNS & DKIM Configuration</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Supabase & PostgreSQL</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Git / GitHub Workflow</span>
+            <span class="badge-pill bg-slate-950 border-slate-800 text-slate-300">Vercel & Bun Runtime</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Education -->
+  <section id="certifications" class="py-16 max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- Education -->
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <div class="badge-pill bg-slate-800 border-slate-700 text-slate-300 mb-2">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i> Academic Foundation
+          </div>
+          <h2 class="font-display text-2xl font-bold text-white">Education</h2>
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/50 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono text-brand-400">2018 — 2022</span>
+            <span class="text-[11px] text-slate-400">Kakamega, Kenya</span>
+          </div>
+          <h3 class="font-display font-bold text-base text-white">Bachelor of Science in Computer Science</h3>
+          <p class="text-xs text-slate-300 font-medium">Masinde Muliro University of Science and Technology (MMUST)</p>
+          <p class="text-xs text-slate-400 leading-relaxed pt-2">
+            Comprehensive curriculum spanning algorithm design, object-oriented software engineering, relational database management, network security, and systems architecture.
+          </p>
+        </div>
+      </div>
+
+      <!-- Certifications Grid -->
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <div class="badge-pill bg-slate-800 border-slate-700 text-slate-300 mb-2">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i> Verified Credentials
+          </div>
+          <h2 class="font-display text-2xl font-bold text-white">Professional Certifications</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-start gap-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-semibold text-slate-200">AI Career Essentials</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">ALX / Generative AI Application</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-start gap-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-semibold text-slate-200">Technical Support Fundamentals</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Google / IT Support Professional</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-start gap-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-semibold text-slate-200">The Bits and Bytes of Networking</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Computer Networking Protocols</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-start gap-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-semibold text-slate-200">Intro to Cybersecurity Careers</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Security Policies & Vulnerabilities</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-start gap-3 sm:col-span-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-semibold text-slate-200">Introduction to Cybersecurity Essentials</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Access control, threat identification, and data compliance standards.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & Connect Section -->
+  <section id="contact" class="py-20 border-t border-slate-800 bg-slate-900/40 relative">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <div class="badge-pill bg-brand-500/10 border-brand-500/30 text-brand-400 mb-3">
+        <i data-lucide="send" class="w-3.5 h-3.5"></i> Direct Inquiries
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Let’s Build and Troubleshoot Together
+      </h2>
+      <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto leading-relaxed">
+        Whether you are looking for a dedicated Technical Support Specialist, a Customer Operations Engineer, or an AI systems builder, my inbox is always open.
+      </p>
+
+      <!-- Contact Action Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 text-left">
+
+        <!-- Email Card -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/80 hover:border-brand-500/50 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-9 h-9 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 mb-3">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs text-slate-400">Email Directly</div>
+            <div class="text-xs font-semibold text-slate-200 truncate mt-1">onchirinyambati1998@gmail.com</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="mailto:onchirinyambati1998@gmail.com" class="text-xs text-brand-400 hover:text-brand-300 font-medium">Compose →</a>
+            <button onclick="copyToClipboard('onchirinyambati1998@gmail.com', 'emailStatus')" class="text-[11px] text-slate-400 hover:text-white" id="emailStatus">
+              Copy
+            </button>
+          </div>
+        </div>
+
+        <!-- Phone / WhatsApp Card -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/80 hover:border-brand-500/50 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs text-slate-400">Phone / WhatsApp</div>
+            <div class="text-xs font-semibold text-slate-200 mt-1">+254 725 122 644</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="tel:+254725122644" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium">Call →</a>
+            <button onclick="copyToClipboard('+254725122644', 'phoneStatus')" class="text-[11px] text-slate-400 hover:text-white" id="phoneStatus">
+              Copy
+            </button>
+          </div>
+        </div>
+
+        <!-- Location Card -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/80 flex flex-col justify-between">
+          <div>
+            <div class="w-9 h-9 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-3">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs text-slate-400">Location Base</div>
+            <div class="text-xs font-semibold text-slate-200 mt-1">Nairobi / Mombasa, Kenya</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-400">
+            Open to remote & onsite
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social Links Bar -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="https://www.linkedin.com/in/habakkuknyambati/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-800 bg-slate-950 text-xs font-medium text-slate-300 hover:text-white hover:border-slate-700 transition-all">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5 text-blue-400"></i> LinkedIn Profile
+        </a>
+        <a href="https://github.com/archhub868" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-800 bg-slate-950 text-xs font-medium text-slate-300 hover:text-white hover:border-slate-700 transition-all">
+          <i data-lucide="github" class="w-3.5 h-3.5 text-slate-300"></i> GitHub (@archhub868)
+        </a>
+        <a href="https://www.instagram.com/haba.eu/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-800 bg-slate-950 text-xs font-medium text-slate-300 hover:text-white hover:border-slate-700 transition-all">
+          <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i> Instagram (@haba.eu)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-400 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-slate-300 font-medium">
+        <span>© <span id="currentYear"></span> Habakkuk Nyambati</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-slate-400">All rights reserved</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="text-slate-400 hover:text-slate-200 transition-colors">Back to top ↑</a>
+        <a href="https://magicplan.world" target="_blank" class="text-brand-400 hover:text-brand-300 transition-colors font-medium">Planpaste Live</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Icons & Interaction -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Set Dynamic Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    // Direct Copy Helper
+    function copyToClipboard(text, elementId) {
+      const el = document.getElementById(elementId);
+      const tempInput = document.createElement("input");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      if (el) {
+        const originalText = el.textContent;
+        el.textContent = "Copied!";
+        el.classList.add("text-brand-400");
+        setTimeout(() => {
+          el.textContent = originalText;
+          el.classList.remove("text-brand-400");
+        }, 2000);
+      }
+    }
+  </script>
+</body>
+</html>
